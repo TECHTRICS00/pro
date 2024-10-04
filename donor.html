@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        nav ul {
+            background-color: #333;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            display: inline-block;
+        }
+
+        nav ul li a:hover {
+            background-color: #ff5e57;
+        }
+
+        .container {
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .profile, .form-container {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 40%;
+        }
+
+        .profile img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .profile h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="donor_login.html">Profile</a></li>
+            <li><a href="donor_form.html">Donor Form</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="profile">
+            <img src="profile_placeholder.png" alt="Profile Image">
+            <h2>John Doe</h2>
+            <p>Age: 30</p>
+            <p>Gender: Male</p>
+        </div>
+
+        <div class="form-container">
+            <h2>Blood Donor Form</h2>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScJFLzYtTr3-AGH5ZCMJ7E-GvjaOe8IuXx2Rb1ZBmKM0HUexA/viewform?embedded=true" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+    </div>
+
+</body>
+</html>
