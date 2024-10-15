@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+  <div class="profile-container">
+    <div class="profile-header">
+      <h1>My Profile</h1>
+      <button class="logout-btn">Logout</button>
+    </div>
+
+    <div class="profile-image">
+      <img id="profileImg" src="default-profile.png" alt="Profile Picture">
+      <input type="file" id="uploadImg" style="display: none;">
+      <label for="uploadImg" class="upload-label">Change Picture</label>
+    </div>
+
+    <div class="profile-details">
+      <h2>Oswald Hope Robertson</h2>
+      <p>Email: bloodbank@example.com</p>
+      <p>Phone: +91 9876543210</p>
+      <p>Location:Woolwich, London, United Kingdom</p>
+    </div>
+  </div>
+
+  <script>
+    const uploadImg = document.getElementById('uploadImg');
+    const profileImg = document.getElementById('profileImg');
+
+    uploadImg.addEventListener('change', function() {
+      const file = uploadImg.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+          profileImg.src = event.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
+</body>
+</html>
+
+<style>
+    /* profile.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.profile-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-header h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+.logout-btn {
+  background-color: #ff4b4b;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #ff2a2a;
+}
+
+.profile-image {
+  position: relative;
+  margin: 20px 0;
+}
+
+.profile-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #4CAF50;
+}
+
+.upload-label {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.profile-details h2 {
+  font-size: 22px;
+  color: #333;
+}
+
+.profile-details p {
+  font-size: 16px;
+  color: #555;
+  margin: 5px 0;
+}
+
+</style>
