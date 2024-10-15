@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> <!-- Link to CSS file -->
+    <title>IoT Blood Bank Management</title>
+</head>
+<body>
+    <header>
+        <center><h1>IoT Blood Bank Management</h1></center>
+        <h2 class="main-heading">Your Health, Our Priority</h2>
+        <nav>
+            <ul>
+                <li><a href="main page.html">Home</a></li>
+                <li><a href="change passowrd.html">Change Password</a></li>
+                <li><a href="donor.html">Donor Login</a></li>
+                <li><a href="Donor Regsitartion.html">Donor Registration</a></li>
+                <li><a href="hosptiial login.html">Hospital Login</a></li>
+                <li><a href="hospital reg.html">Hospital Registration</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+        <button class="logout-btn">Log Out</button>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="temperature-section">
+                <h2>Temperature: <span id="temperature">33</span>°C</h2>
+                <img src="thermometer.png" alt="Thermometer" class="thermometer">
+            </div>
+            <div class="chart-section">
+                <canvas id="bloodGroupChart"></canvas>
+            </div>
+            <div class="donor-registration">
+                <h3>Become a Donor</h3>
+                <button class="register-btn">Register Now</button>
+            </div>
+            <div class="info-section">
+                <h3>Why Donate Blood?</h3>
+                <p>Every year, millions of people need blood transfusions due to emergencies, surgeries, and medical conditions. Your donation can save lives and provide essential support to those in need.</p>
+                <p><strong>Join us in making a difference!</strong> Donating blood not only helps patients but also benefits your health. Regular donations can reduce the risk of certain diseases and keep your body healthy.</p>
+                <p>Remember, each donation can save up to three lives. Become a hero today by donating blood!</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 IoT Blood Bank Management. All Rights Reserved.</p>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Sample data for the blood group chart
+        const ctx = document.getElementById('bloodGroupChart').getContext('2d');
+        const bloodGroupChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'],
+                datasets: [{
+                    label: 'Blood Units Available',
+                    data: [30, 10, 5, 0, 3, 0, 40, 2],
+                    backgroundColor: 'rgba(76, 175, 80, 0.6)',
+                    borderColor: 'rgba(76, 175, 80, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
+<style>
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Header styling */
+header {
+    background: linear-gradient(to right, #e74c3c, #c0392b);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.main-heading {
+    font-size: 20px;
+    color: #ffeb3b;
+    margin: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffeb3b;
+}
+
+.logout-btn {
+    background-color: #e53935;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.logout-btn:hover {
+    background-color: #c62828;
+}
+
+/* Main container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Temperature section */
+.temperature-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.thermometer {
+    width: 40px;
+    margin-left: 10px;
+}
+
+/* Chart section */
+.chart-section {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+/* Donor registration section */
+.donor-registration {
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Info section */
+.info-section {
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.info-section h3 {
+    color: #e74c3c;
+}
+
+/* Buttons */
+.register-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.register-btn:hover {
+    background-color: #45a049;
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-nav a:hover {
+    color: #ffeb3b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .chart-section, .donor-registration, .info-section {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .temperature-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .thermometer {
+        width: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    .main-heading {
+        font-size: 18px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .logout-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .temperature-section h2 {
+        font-size: 20px;
+    }
+}
+</style>
